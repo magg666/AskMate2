@@ -1,0 +1,69 @@
+.add_title {
+    display: grid;
+    margin: auto;
+    background-color: wheat;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 16px
+}
+
+.grid_add_container {
+    width: 40%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    background-color: indigo;
+    padding: 5px;
+    margin: auto;
+    /*grid-column-gap: 1px;*/
+    /*grid-row-gap: 1px;*/
+ }
+
+.add_grid_item {
+    background-color: white;
+    font-family: sans-serif;
+    text-align: left;
+    padding: 10px;
+
+}
+
+form div label {
+    display: block;
+    font-size: 28px;
+    padding: 10px;
+}
+
+form div input, form div textarea {
+    display: block;
+    font-size: 18px;
+    padding: 10px;
+    width: 95%;
+    margin: auto;
+    background-color: rgba(245, 222,179,0.5);
+
+}
+textarea {
+    resize: none;
+    height: 280px ;
+    font-family: sans-serif;
+    white-space: pre-wrap;
+}
+
+#add_button {
+    width: 100%;
+    font-size: 28px;
+    padding: 10px;
+    background-color: indigo;
+    color: white;
+    border: indigo 1px solid;
+
+}
+
+#add_button:hover {
+    width: 100%;
+    font-size: 28px;
+    padding: 10px;
+    background-color: white;
+    color: indigo;
+    border: indigo 1px solid;
+}

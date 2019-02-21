@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %} Add answer {% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/add_answer_or_question_style.css') }}"
+          type="text/css"/>
+{% endblock %}
+
+{% block main %}
+    <div class="add_title">
+        {% if answer %}
+            <h1>Update answer</h1>
+        {% else %}
+            <h1>Add answer</h1>
+        {% endif %}
+    </div>
+
+    <div class="grid_add_container">
+        <form method="post" action="{{ form_url }}">
+            <div class="add_grid_item" id="add_item2">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Answer message goes here"
+                          minlength="10" required>{% if answer %}{{ answer['message']| safe }}{% endif %}</textarea>
+            </div>
+
+            <div class="add_grid_item" id="add_item3">
+                <label for="image">Image:</label>
+                <input id="image" type="url" name="image" placeholder="URL address goes here"
+                       value="{% if answer %}{{ answer['image'] }}{% endif %}"/>
+            </div>
+            <div class="add_grid_item" id="add_item4">
+                <button id="add_button" type="submit">{% if answer %} Update answer {% else %} Add
+                    answer{% endif %}</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+2019-02-16 09:57:54,422 - logging_rules -get_five_latest - CRITICAL - dupa column ud.i does not exist
+LINE 4:     JOIN user_data ud on q.user_id = ud.i
+                                             ^
+ - /home/magda/mine_ask_mate/AskMate2/data_manager/question.py - 22
+2019-02-16 13:32:36,306 - LEVEL: CRITICAL - IN MODULE: question - IN FUNCTION: get_five_latest IN LINE: 21 - column ud.i does not exist
+LINE 4:     JOIN user_data ud on q.user_id = ud.i
+                                             ^
+
+2019-02-16 13:35:16,607 - LEVEL: CRITICAL - IN MODULE: question - IN FUNCTION: get_five_latest IN LINE: 20 - name 'db_qs' is not defined
+2019-02-16 14:07:20,017 - LEVEL: ERROR - IN MODULE: tags - IN FUNCTION: group_for_questions IN LINE: 12 - name 'grouped_tag' is not defined
+2019-02-16 14:07:36,356 - LEVEL: ERROR - IN MODULE: tags - IN FUNCTION: group_for_questions IN LINE: 12 - name 'grouped_tag' is not defined
+2019-02-16 14:24:59,773 - LEVEL: CRITICAL - IN MODULE: question - IN FUNCTION: get_ordered_by_latest_with IN LINE: 19 - column "none" does not exist
+LINE 5:     ORDER BY None DESC
+                     ^
+
+2019-02-16 15:10:37,491 - LEVEL: CRITICAL - IN MODULE: question - IN FUNCTION: get_sorted_by_user IN LINE: 36 - name 'question' is not defined
+2019-02-16 20:22:13,100 - LEVEL: ERROR - IN MODULE: comment - IN FUNCTION: get_for_every_answer IN LINE: 28 - name 'all_comment' is not defined
+2019-02-16 20:25:30,252 - LEVEL: ERROR - IN MODULE: comment - IN FUNCTION: get_for_every_answer IN LINE: 28 - name 'all_comment' is not defined
+2019-02-16 22:10:31,076 - LEVEL: ERROR - IN MODULE: question - IN FUNCTION: add IN LINE: 118 - insert or update on table "question" violates foreign key constraint "fk_user_id"
+DETAIL:  Key (user_id)=(3) is not present in table "user_data".
+, Data to be saved: This is very important question./How do I format a string using a dictionary in python-3.x?//3
+2019-02-18 21:52:25,618 - LEVEL: ERROR - IN MODULE: comment - IN FUNCTION: update IN LINE: 115 - 'comment_id', Modified comment: 2/I think you could use my_list = list() as well. or not/6

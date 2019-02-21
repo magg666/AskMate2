@@ -1,0 +1,23 @@
+<div class="comment">
+    <div class="comment_item" id="comment1">{{ comment['submission_time'] }}</div>
+    <div class="comment_item" id="comment2">{{ comment['login'] }}</div>
+    <div class="comment_item" id="comment3">{{ comment['message'] | safe}}</div>
+    <div class="comment_item" id="comment4">
+    {% if comment['user_id'] == session['id'] %}
+        <a href="/comment/{{ comment['id'] }}/edit">
+        <button type="submit" id="comment_button_e"><i class="far fa-edit"></i></button>
+    </a>
+    {%  endif %}
+    </div>
+    <div class="comment_item" id="comment5">
+        {% if comment['user_id'] == session['id'] %}
+        <form action="/comment/{{ comment['id'] }}/delete" method="post">
+            <button onclick="return confirm('You are going to delete comment. Are you sure?')" type="submit" id="comment_button_d"><i class="far fa-trash-alt"></i></button>
+        </form>
+        {%  endif %}
+    </div>
+    <div class="comment_item" id="comment6">Edited: {{ comment['edited_count'] }}</div>
+</div>
+
+
+

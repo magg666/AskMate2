@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/add_tags.css') }}"
+          type="text/css"/>
+{% endblock %}
+
+{% block main %}
+    <div class="tag_form">
+        <div class="tag_grid_item">
+            <label id="tag_data"> Choose tag
+
+                {% for tag in tags %}
+                    <form action="/question/{{ question_id }}/new-tag" method="post">
+
+                    <input type="checkbox" name="existing_tag" value="{{ tag['name'] }}">{{ tag['name'] }}<br>
+                {% endfor %}
+
+                <input class="tag_input" type="text" name="tag">
+                <button type="submit">submit</button>
+
+                </form>
+
+            </label>
+        </div>
+    </div>
+{% endblock %}

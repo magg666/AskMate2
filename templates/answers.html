@@ -1,0 +1,71 @@
+{% for answer in all_answers %}
+
+    {% if is_any_answer_accepted %}
+        {% if answer['accepted'] %}
+            <img id="verified" alt="Answer is verified"
+                 src="{{ url_for('static',filename='images/verified.png') }}">
+        {% endif %}
+    {% else %}
+        {% if question['login'] == session['username'] %}
+            <form action="/answer/{{ answer['id'] }}/accept" method="post">
+                <button type="submit" id="verified">Accept answer</button>
+            </form>
+        {% endif %}
+    {% endif %}
+
+    <div class="grid-container2">
+        <div class="grid-item2" id="answer1">
+            {% if answer['image'] %}
+                <img class="answer_item_image" alt="Image from user" src="{{ answer['image'] }}">
+            {% else %}
+            {% endif %}
+        </div>
+
+        <div class="grid-item2" id="answer2"><img id="answer_avatar" alt="User_photo" title="Your profile picture"
+                                                  src="{{ url_for('static', filename='images/unicorn.jpeg') }}"><br>
+            {{ answer['login'] }}
+        </div>
+        <div class="grid-item2" id="answer3"><p class="answer_m_text">{{ answer['message'] | safe }}</p></div>
+        <div class="grid-item2" id="answer4">
+            <form id="form_vote_answer" action="/question/{{ question['id'] }}/{{ answer['id'] }}" method="post"
+                  class="voting_answer">
+                <button class="vote_answer_button" name="vote_button" type="submit" value="plus"><i
+                        class="far fa-plus-square"></i></button>
+                <br><br><span class="vote_answer_text">Vote {{ answer['vote_number'] }}</span><br><br>
+                <button class="vote_answer_button" name="vote_button" type="submit" value="minus"><i
+                        class="far fa-minus-square"></i></button>
+            </form>
+        </div>
+
+        <div class="grid-item2" id="answer5">
+            {% if answer['login'] == session['username'] %}
+                <form action="/answer/{{ answer['id'] }}/delete" method="post">
+                    <button onclick="return confirm('You are going to delete answer. Are you sure?')" type="submit"
+                            class="change_answer_d"><i class="far fa-trash-alt"></i></button>
+                </form>
+            {% endif %}
+        </div>
+        <div class="grid-item2" id="answer6">
+            {% if answer['login'] == session['username'] %}
+                <a href="/answer/{{ answer['id'] }}/edit">
+                    <button type="submit" class="change_answer_e"><i class="far fa-edit"></i></button>
+                </a>
+            {% endif %}
+        </div>
+
+        <div class="grid-item2" id="answer7">Added: {{ answer['submission_time'] }}</div>
+    </div>
+    {% for c in answer_comments %}
+        {% for comment in c %}
+
+            {% if comment['answer_id'] == answer['id'] %}
+                {% include 'comment.html' %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    <div class="add_comment_button">
+        <a href="/answer/{{ answer['id'] }}/new-comment">
+            <button class="comment_button" type="submit">Add comment</button>
+        </a></div>
+
+{% endfor %}

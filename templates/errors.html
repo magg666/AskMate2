@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block title%}Ooops...{% endblock %}
+
+{% block main %}
+    {% if error %}
+    <h1>Error {{ error }}. {{ error_message }}</h1>
+    <a href="/"><h2>RETURN TO HOMEPAGE</h2></a>
+    {% else %}
+    <h1>Page is currently modernised - please try again in few minutes.</h1>
+    <h2>Sorry for inconvenience</h2>
+    {% endif %}
+
+{% endblock %}

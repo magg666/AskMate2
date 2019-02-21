@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% block title %}Question page{% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/question_on_question_page_style.css') }}"
+          type="text/css"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/answers_on_question_page_style.css') }}"
+          type="text/css"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/comments_view_style.css') }}"
+          type="text/css"/>
+
+{% endblock %}
+
+{% block main %}
+    <div class="grid-container">
+        <div class="grid-item" id="item1">
+            {% if question['image'] %}
+                <img class="item1_image" alt="Image from user" src="{{ question['image'] }}">
+            {% else %}
+            {% endif %}
+        </div>
+        <div class="grid-item" id="item2"><img id="avatar" alt="User_photo" title="Your profile picture"
+                                               src="{{ url_for('static', filename='images/unicorn.jpeg') }}"><br>
+            {{ question['login'] }}
+        </div>
+        <div class="grid-item" id="item3">{{ question['title'] | safe }}</div>
+        <div class="grid-item" id="item4">
+
+            <form id="form_vote" action="/question/{{ question['id'] }}/vote" method="post" class="voting">
+                    {% if session['username'] %}
+                    <button class="vote_button" name="vote_button" type="submit" value="plus"><i
+                            class="far fa-plus-square"></i></button>
+                    {% else %}
+                    {% endif %}
+                    <br><br><span class="vote_text">Vote {{ question['vote_number'] }}</span><br><br>
+                    {% if session['username'] %}
+                    <button class="vote_button" name="vote_button" type="submit" value="minus"><i
+                            class="far fa-minus-square"></i></button>
+                    {% else %}
+                    {% endif %}
+
+            </form>
+
+
+        </div>
+        <div class="grid-item" id="item5">{{ question['message'] | safe }}</div>
+
+        <div class="grid-item" id="item6">
+
+                <form action="/question/{{ question['id'] }}/delete" method="post">
+                    {% if question['login'] == session['username'] %}
+                    <button onclick="return confirm('You are going to delete question. Are you sure?')" type="submit"
+                            class="change_d">Delete question<i class="far fa-trash-alt"></i></button>
+                    {% else %}
+                    {% endif %}
+                </form>
+
+        </div>
+        <div class="grid-item" id="item7">
+            {% if question['login'] == session['username'] %}
+            <a href="/question/{{ question['id'] }}/edit">
+                <button type="submit" class="change_e">Edit question<i class="far fa-edit"></i></button>
+                </a>
+            {% else %}
+            {% endif %}
+        </div>
+
+        <div class="grid-item" id="item8">Asked: {{ question['submission_time'] }}</div>
+        <div class="grid-item" id="item9">Tag:
+            {% for tag in tags %}
+                <form class="tag_delete" action="/question/{{ question['id'] }}/tag/{{ tag['id'] }}/delete"
+                      method="post">
+                        {% if question['login'] == session['username'] %}
+                        <button type="submit" class="tag_delete_button">x</button>
+                        {% else %}
+                        {% endif %}
+                    {{ tag['name'] }}
+                </form>
+            {% endfor %}
+        </div>
+        <div class="grid-item" id="item10">Viewed: {{ question['view_number'] }} </div>
+
+        <div class="grid-item" id="item11">
+                {% if question['login'] == session['username'] %}
+                <a href="/question/{{ question['id'] }}/new-tag">
+                    <button type="submit" class="add_tag_button">Add tags</button>
+                </a>
+                {% else %}
+                {% endif %}
+
+        </div>
+
+    </div>
+
+    <div class="add_answer">
+    {% if session['username'] %}
+        <a href="/question/{{ question['id'] }}/new-answer">
+            <button class="add_answer_button" type="submit">Add answer</button>
+        </a>
+    {% endif %}
+    </div>
+    {% for comment in question_comments %}
+        {% include 'comment.html' %}
+    {% endfor %}
+    <div class="add_comment_button">
+    {% if session['username'] %}
+        <a href="/question/{{ question['id'] }}/new-comment">
+            <button class="comment_button" type="submit">Add comment</button>
+        </a>
+    {% endif %}
+    </div>
+
+    {% include 'answers.html' %}
+{% endblock %}

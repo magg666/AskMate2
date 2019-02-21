@@ -1,0 +1,220 @@
+#verified {
+    width: 100px;
+    position: absolute;
+    left: 13%;
+    margin-top: 3%;
+
+}
+
+.add_answer {
+    width: 60%;
+    margin: auto;
+    display: grid;
+    text-align: center;
+}
+
+.add_answer_button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: darkred;
+    color: white;
+    border: darkred 1px solid;
+
+}
+
+.add_answer_button:hover {
+    color: white;
+    background-color: darkgreen;
+    border: darkgreen 1px solid;
+    cursor: pointer;
+}
+
+.grid-container2 {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 176px 100px auto 80px;
+    grid-template-rows: 100px auto 40px;
+    background-color: indigo;
+    padding: 1px;
+    margin: auto;
+    /*grid-column-gap: 1px;*/
+    /*grid-row-gap: 1px;*/
+ }
+
+.grid-item2 {
+    background-color: white;
+    font-family: sans-serif;
+}
+
+/*1 2 3 4  */
+/*1 5 3 4 */
+/*1 6 7 7 */
+
+#answer1 {
+    grid-area: 1/1/4/2;
+    text-align: center;
+    border-right: indigo 1px solid;
+}
+.answer_item_image {
+    width: 180px;
+    padding: 10px;
+
+}
+#answer2 {
+    grid-area: 1/2/2/3;
+    text-align: center;
+    font-size: 12px;
+    border-right: indigo 1px solid;
+}
+#answer_avatar {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+}
+#answer3 {
+    grid-area: 1/3/3/4;
+    text-align: left;
+}
+.answer_m_text {
+    font-size: 16px;
+    white-space: pre-line;
+    color: black;
+    padding: 10px;
+    word-break: break-word;
+}
+
+#answer4 {
+    grid-area: 1/4/3/5;
+    display: block;
+    /*width: 100%;*/
+}
+#form_vote_answer {
+    display: block;
+    margin: auto;
+    text-align: center;
+
+}
+.vote_answer_button {
+    padding: 10px;
+    background-color: white;
+    border: indigo 1px solid;
+    color: indigo;
+    font-size: 22px;
+}
+.vote_answer_text {
+    font-size: 14px;
+}
+
+.vote_answer_button:hover {
+    color: indigo;
+    background-color: gold;
+}
+
+#answer5 {
+    grid-area: 2/2/3/3;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    display: inline-grid;
+    border-right: indigo 1px solid;
+}
+
+.change_answer_d {
+
+    font-size: 18px;
+    background-color: white;
+    color: darkred;
+    border: darkred 1px solid;
+    width: 100%;
+    padding: 5px;
+    position: absolute;
+    bottom: 5px;
+
+}
+
+.change_answer_d:hover {
+    font-size: 18px;
+    background-color: darkred;
+    color: white;
+    width: 100%;
+    padding: 5px;
+    position: absolute;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+#answer6 {
+    grid-area: 3/2/4/3;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    display: inline-grid;
+    border-right: indigo 1px solid;
+}
+
+.change_answer_e {
+    font-size: 18px;
+    background-color: white;
+    color: darkgreen;
+    border: darkgreen 1px solid;
+    width: 100%;
+    padding: 5px;
+    position: absolute;
+    top: 5px;
+}
+
+.change_answer_e:hover {
+    font-size: 18px;
+    background-color: darkgreen;
+    color: white;
+    width: 100%;
+    padding: 5px;
+    position: absolute;
+    top: 5px;
+    cursor: pointer;
+}
+
+#answer7 {
+    grid-area: 3/3/4/5;
+    font-size: smaller;
+    text-align: left;
+    padding: 10px;
+}
+
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}

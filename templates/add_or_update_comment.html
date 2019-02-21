@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{#title#}
+{% block link %}<link rel="stylesheet" href="{{ url_for('static',filename='css/add_answer_or_question_style.css') }}"
+          type="text/css"/>
+{% endblock %}
+
+{% block main %}
+    <div class="grid_add_container">
+        <form method="post" action="{{ form_url }}">
+            <div class="add_grid_item" id="add_item2">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Comment message goes here"
+                          minlength="10" required>{% if comment %}{{ comment['message']| safe }}{% endif %}</textarea>
+            </div>
+            <div class="add_grid_item" id="add_item4">
+                <button id="add_button" type="submit">{% if comment %} Update comment {% else %} Add
+                    comment{% endif %}</button>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

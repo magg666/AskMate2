@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+    <h1>User: {{ user_data['login'] }}</h1>
+    <h2>Registration date: {{ user_data['registration_date'] }}</h2>
+    <h2>Prestige points: {{ user_data['prestige_points'] }}</h2>
+
+    {% if user_questions or user_answers or user_comments %}
+
+        {% if user_questions %}
+            <span>Questions you asked:</span>
+            {% for question in user_questions %}
+                <h4>Your question: <a href="/question/{{ question['id'] }}">{{ question['title'] | truncate(25) }}</a>
+                </h4>
+            {% endfor %}
+        {% endif %}
+
+        {% if user_answers %}
+            <span>Answers you gave:</span>
+            {% for answer in user_answers %}
+                <h4>Your answer: <a
+                        href="/question/{{ answer['question_id'] }}">{{ answer['message']| truncate(25) }}</a>
+                </h4>
+            {% endfor %}
+        {% endif %}
+
+        {% if user_comments %}
+            <span>Comments you provided:</span>
+            {% for comment in user_comments %}
+                <h4>Your comment: <a
+                        href="/question/{{ comment['question_id'] }}">{{ comment['message']| truncate(25) }}</a>
+                </h4>
+            {% endfor %}
+        {% endif %}
+    {% else %}
+        <h3>You did not post anything yet.. Do not be shy :)</h3>
+    {% endif %}
+
+{% endblock %}

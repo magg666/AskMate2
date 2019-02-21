@@ -1,0 +1,118 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.logo_panel {
+    background-color: #4B0082;
+}
+
+#logo_image:link #logo_image:visited #logo_image:hover #logo_image:active  {
+    color: indigo;
+    background-color: indigo;
+}
+
+nav {
+
+    font-family: sans-serif;
+    border: wheat 2px solid;
+}
+
+.nav_bar {
+    background-color: #4B0082;
+
+}
+
+.nav_bar_button {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 16px;
+    border-right: wheat 2px solid;
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.search {
+    display: inline-block;
+    /*float: inside;*/
+    float: right;
+    padding: 9px;
+
+
+}
+
+.nav_search {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+
+
+}
+
+.search_window {
+    width: 200px;
+    font-size: 18px;
+    font-family: sans-serif;
+    border: wheat solid 2px;
+    height: 40px;
+
+}
+
+.search_button {
+    background-color: indigo;
+    font-size: 18px;
+    border: wheat solid 2px;
+    color: white;
+    height: 40px;
+    width: 40px;
+
+}
+
+.login {
+    display: inline-block;
+    right: 3%;
+    position: center;
+    overflow: auto;
+    float: right;
+    padding: 12px;
+    font-size: 26px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.login_button {
+    font-size: 24px;
+    background-color: indigo;
+    border: wheat 2px solid;
+    position: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+
+}
+
+.nav_bar_button:hover, .search_button:hover, .login_button:hover {
+    background-color: wheat;
+    color: indigo;
+    cursor: pointer;
+}
+
+#username{
+    color: white;
+    text-decoration: none;
+}
+#username:visited{
+    color: white;
+    text-decoration: none;
+}
+
+#username:hover {
+    color: darkred;
+}

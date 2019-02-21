@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block link %}
+{% endblock %}
+
+{% block main %}
+    <div>
+        <form action="{{ form_url }}" method="post">
+            <div>
+                <label>Username
+                    <input placeholder="username" name="username" required>
+                </label>
+            </div>
+            <div>
+                <label>Password
+                    <input name="password_one" required>
+                </label>
+            </div>
+            {% if form_url == '/registration' %}
+                <div>
+                    <label>Repeat password
+                        <input name="password_two" required>
+                    </label>
+                </div>
+
+                <div>
+                    <button type="submit">Register</button>
+                </div>
+            {% else %}
+                <button type="submit">Login</button>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title %} List of questions {% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main_list_style.css') }}" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet'>
+{% endblock %}
+
+{% block main %}
+    {% include 'sort_option.html' %}
+
+    {% for question in questions %}
+        <div class="grid-container">
+            <div id="item1" class="grid-item"><img alt="User_photo" title="Your profile picture"
+                                                   src="{{ url_for('static', filename='images/unicorn.jpeg') }}">
+                {{ question['login'] }}
+            </div>
+            <div id="item2" class="grid-item">
+                <div class="item2text_asked"> Asked: {{ question['submission_time'] }}</div>
+                <div class="item2text_edited"></div>
+                {# empty space for something #}
+            </div>
+            <div id="item3" class="grid-item"><a class="item3text"
+                                                 href="/question/{{ question['id'] }}">{{ question["title"] }}</a></div>
+
+            <div id="item4" class="grid-item"><a href="/question/{{ question['id'] }}"> <img class="item4image"
+                                                                                             src="{{ url_for('static', filename='images/postit.png') }}"
+                                                                                             alt="Post it with number of answers">
+                <div class="centered"> {{ question['count'] }} <br> answers</div>
+            </a>
+            </div>
+
+            <div id="item5" class="grid-item"><i class="fas fa-trophy" title="Prestige points"></i><span
+                    class="item5text"> {{ question['prestige_points'] }} </span></div>
+
+
+            <div id="item6" class="grid-item">tags: {% for tag in question['tag'] %}{{ tag }} {% endfor %}</div>
+
+
+            <div id="item7" class="grid-item"><i class="far fa-eye" title="viewed"></i> {{ question["view_number"] }}
+            </div>
+            <div id="item8" class="grid-item"><i class="fas fa-star" title="voted"></i> {{ question["vote_number"] }}
+            </div>
+
+        </div>
+    {% endfor %}
+{% endblock %}

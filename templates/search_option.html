@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block title %}Search results{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/search_option_style.css') }}" type="text/css"/>{% endblock %}
+
+{% block main %}
+    <div class="search_header"><h2>Search results:</h2></div>
+    {% if all_data is defined and all_data|length > 0 %}
+        {% for data in all_data %}
+            <div class="grid-container">
+
+                <div id="item1" class="grid-item">Question title:<span
+                        class="search_text">{{ data['title']| safe | replace(search_phrase, styled_search_phrase) if data['title']!= none else 'No search data in question title' }}</span>
+                </div>
+                <div id="item4" class="grid-item">Question content:<br><span
+                        class="search_text">{{ data['message'] | safe | replace(search_phrase, styled_search_phrase) if data['message']!= none else 'No search data in question content' }}</span>
+                </div>
+                <div id="item2"><a href="/question/{{ data['id'] }}">
+                    <button type="submit" id="fancy_button">Go to search result</button>
+                </a></div>
+
+                <div id="item3"
+                     class="grid-item">Answer content: <span
+                >{{ data['answer_message']| safe| replace(search_phrase, styled_search_phrase) if data['answer_message']!= none else 'No search data in answer content' }}</span>
+                </div>
+
+            </div>
+        {% endfor %}
+        {% else %}
+        <div class="search_header"><h3>No matches found. Try again with different phrase</h3></div>
+    {% endif %}
+{% endblock %}

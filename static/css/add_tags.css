@@ -1,0 +1,27 @@
+.tag_form {
+    width: 60%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    background-color: indigo;
+    padding: 5px;
+    margin: auto;
+
+}
+
+.tag_grid_item {
+    background-color: white;
+    font-family: sans-serif;
+    text-align: left;
+    padding: 20px;
+
+}
+#tag_data {
+    font-size: 20px;
+
+}
+
+.tag_input {
+    font-size: 28px;
+    padding: 10px;
+}

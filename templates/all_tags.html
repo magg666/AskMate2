@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+    <table>
+    <tr>
+        <th>TAGS</th>
+        <th>COUNTED QUESTIONS</th>
+
+    </tr>
+        {% for tag in tags %}
+    <tr>
+        <td>{{ tag['name'] }}</td>
+        <td>{{ tag['count'] }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

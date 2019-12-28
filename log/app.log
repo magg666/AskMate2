@@ -20,3 +20,15 @@ LINE 5:     ORDER BY None DESC
 DETAIL:  Key (user_id)=(3) is not present in table "user_data".
 , Data to be saved: This is very important question./How do I format a string using a dictionary in python-3.x?//3
 2019-02-18 21:52:25,618 - LEVEL: ERROR - IN MODULE: comment - IN FUNCTION: update IN LINE: 115 - 'comment_id', Modified comment: 2/I think you could use my_list = list() as well. or not/6
+2019-12-28 13:25:06,377 - LEVEL: CRITICAL - IN MODULE: question - IN FUNCTION: get_ordered_by_latest_with IN LINE: 48 - BŁĄD:  relacja "user_data" nie istnieje
+LINE 4:     JOIN user_data ud on q.user_id = ud.id
+                 ^
+
+2019-12-28 13:25:11,231 - LEVEL: CRITICAL - IN MODULE: question - IN FUNCTION: get_ordered_by_latest_with IN LINE: 48 - BŁĄD:  relacja "user_data" nie istnieje
+LINE 4:     JOIN user_data ud on q.user_id = ud.id
+                 ^
+
+2019-12-28 13:25:14,137 - LEVEL: CRITICAL - IN MODULE: question - IN FUNCTION: get_ordered_by_latest_with IN LINE: 48 - BŁĄD:  relacja "user_data" nie istnieje
+LINE 4:     JOIN user_data ud on q.user_id = ud.id
+                 ^
+

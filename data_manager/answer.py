@@ -1,6 +1,6 @@
-import db_answer as answer_manager
-import logging_rules as log
-import useful as util
+from database_connect import db_answer as answer_manager
+from log import logging_rules as log
+from useful_functions import useful as util
 
 
 class ReadingProblem(Exception):

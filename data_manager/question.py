@@ -1,6 +1,6 @@
-import db_question as qst_manager
-import logging_rules as log
-import useful as util
+from database_connect import db_question as qst_manager
+from log import logging_rules as log
+from useful_functions import useful as util
 
 EMERGENCY_NUMBER = 0
 VIEW_RATE = 1

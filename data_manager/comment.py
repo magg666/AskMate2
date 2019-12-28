@@ -1,7 +1,7 @@
-import db_comments as comm_manager
-import logging_rules as log
-import useful as util
-import answer as answer
+from database_connect import db_comments as comm_manager
+from log import logging_rules as log
+from useful_functions import useful as util
+from data_manager import answer as answer
 
 EDIT_RATE = 1
 EMERGENCY_NUMBER = 0

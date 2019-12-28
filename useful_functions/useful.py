@@ -1,4 +1,4 @@
-import logging_rules as log
+from log import logging_rules as log
 
 EMERGENCY_NUMBER = 0
 VIEW_RATE = 1

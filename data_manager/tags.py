@@ -1,5 +1,5 @@
-import db_tags as tag_manager
-import logging_rules as log
+from database_connect import db_tags as tag_manager
+from log import logging_rules as log
 
 
 class ReadingProblem(Exception):

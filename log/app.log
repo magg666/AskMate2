@@ -32,3 +32,6 @@ LINE 4:     JOIN user_data ud on q.user_id = ud.id
 LINE 4:     JOIN user_data ud on q.user_id = ud.id
                  ^
 
+2019-12-28 13:56:09,036 - LEVEL: ERROR - IN MODULE: answer - IN FUNCTION: count_for_each_question IN LINE: 31 - 'Some necessary environment variable(s) are not defined'
+2019-12-28 13:56:09,038 - LEVEL: ERROR - IN MODULE: tags - IN FUNCTION: group_for_questions IN LINE: 25 - 'Some necessary environment variable(s) are not defined'
+2019-12-28 13:56:09,039 - LEVEL: CRITICAL - IN MODULE: question - IN FUNCTION: get_ordered_by_latest_with IN LINE: 48 - 'Some necessary environment variable(s) are not defined'

@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, Markup, session, escape
 from functools import wraps
 
-import question as question
-import answer as answer
-import comment as comment
-import tags as tag
-import user as user
+from data_manager import question as question
+from data_manager import answer as answer
+from data_manager import comment as comment
+from data_manager import tags as tag
+from data_manager import user as user
 
 app = Flask(__name__)
 app.secret_key = 'uuu'

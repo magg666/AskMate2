@@ -1,9 +1,9 @@
 import bcrypt
 
-import db_user as user_manager
-import logging_rules as log
-import comment as comment
-import useful as util
+from database_connect import db_user as user_manager
+from log import logging_rules as log
+from data_manager import comment as comment
+from useful_functions import useful as util
 
 
 class SavingDataProblem(Exception):

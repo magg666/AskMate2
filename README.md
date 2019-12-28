@@ -4,12 +4,19 @@ Created to practice MVC pattern, errors handling, logging.
 I used custom created errors classes, data validation, logging library. 
 Implemented Jinja template language, css styling, hashing passwords.
 
+AskMate uses:
+* MVC pattern desing
+* Jinja template language
+* Custom SQL queries 
+* Custom exceptions classes
+* Logging
+* Data validation
 
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-* [Features](#features)
+* [Code Examples](#code-examples)
 * [Status](#status)
 * [Contact](#contact)
 
@@ -67,15 +74,6 @@ def get_answer_by_question_id(cursor, question_id):
     answers = cursor.fetchall()
     return answers
 ```
-
-## Features
-AskMate uses:
-* MVC pattern desing
-* Jinja template language
-* Custom SQL queries 
-* Custom exceptions classes
-* Logging
-* Data validation
 
 ## Status
 Project is finished.
